@@ -1,0 +1,87 @@
+@import "../../colors.scss";
+
+aside {
+    padding: 2rem 2rem;
+    width: 22%;
+    height: 100vh;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    h3 {
+        color: $dark-gray;
+        font-weight: 500;
+        padding-bottom: 1rem;
+    }
+
+    button {
+        width: 100%;
+        display: block;
+    }
+
+    small {
+        color: $dark-gray;
+        font-weight: 700;
+    }
+
+    .sliders {
+
+        padding: 1rem 0;
+        border-bottom: .1px solid $gray;
+
+        div {
+            padding-bottom: .5rem;
+
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                input {
+                    width: 70%;
+                }
+            }
+        }
+    }
+
+    .percentage {
+        padding: 1rem 0 2rem;
+
+        p {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 1rem;
+        }
+
+        button {
+            margin-bottom: 2rem;
+        }
+
+        a {
+            font-weight: 700;
+            font-size: .8rem;
+        }
+    }
+
+    .bottom {
+        border-left: 2px solid $blue;
+        padding-left: 1rem;
+
+        a {
+            text-align: start;
+            font-weight: 600;
+            font-size: .7rem;
+        }
+    }
+}
+
+@media(max-width:950px){
+    aside{
+        width: 100%;
+        height: auto;
+        padding-bottom: 10rem;
+    }
+}

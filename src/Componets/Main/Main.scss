@@ -1,0 +1,172 @@
+@import "../../colors.scss";
+
+main {
+
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    flex: 1;
+    padding: 2rem 3% 5rem;
+    height: 100vh;
+    overflow-y: scroll;
+
+    >h3 {
+        color: $blue;
+        font-weight: 600;
+    }
+
+    h2 {
+        color: $dark-gray;
+        font-weight: 600;
+    }
+
+    .goals {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        padding: 2rem 0;
+
+        div {
+
+            border-bottom: 2px solid $blue;
+            padding-bottom: .5rem;
+
+            h1 {
+                color: $dark-gray;
+                font-weight: 600;
+            }
+
+            small {
+                color: $gray;
+
+            }
+        }
+    }
+
+    .chart {
+
+        h3 {
+            color: $dark-gray;
+            font-weight: 600;
+        }
+    }
+
+    .bottom {
+
+        h3 {
+            color: $dark-gray;
+            font-weight: 600;
+        }
+
+        small {
+            color: $gray;
+            font-weight: 500;
+        }
+
+        .progress {
+            display: flex;
+            margin: 1.5rem 0;
+            align-items: center;
+            justify-content: space-between;
+
+            .left {
+                small {
+                    display: inline-block;
+                    padding-bottom: 1rem;
+
+                    b {
+                        padding-right: 10px;
+                    }
+                }
+            }
+
+            .right {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-inline: 2rem;
+                gap: 2rem;
+
+                .circle {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 100%;
+                    background: conic-gradient($green 0deg, $white 0deg);
+                    position: relative;
+                    display: grid;
+                    place-items: center;
+                    transition: .3s linear;
+
+
+                    span {
+                        position: relative;
+                    }
+
+                    small {
+                        position: absolute;
+                        bottom: -1.5rem;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 80%;
+                        height: 80%;
+                        background-color: $white;
+                        border-radius: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// responsiveness 
+
+@media (max-width:1150px) {
+    main .bottom .progress .right .circle {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+@media (max-width:950px) {
+    main {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width:450px) {
+    main .goals{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:600px) {
+    main .bottom .progress{
+        flex-wrap: wrap;
+
+        .left{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .right{
+            margin-top: 2rem;
+        }
+    }
+}
+
+@media (max-width:450px) {
+    main .bottom .progress .right{
+        padding-inline: 0rem;
+    }
+}

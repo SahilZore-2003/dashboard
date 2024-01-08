@@ -1,0 +1,96 @@
+@import "../../colors.scss";
+
+.user {
+
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $gray;
+        border-radius: 10px;
+    }
+
+    padding-inline: 1.5rem;
+    height: 100vh;
+    overflow-y: scroll;
+    position: relative;
+    padding-bottom: 3rem;
+    width: 20%;
+
+    small {
+        color: $gray;
+    }
+
+    .top {
+
+        display: flex;
+        gap: 1rem;
+        padding: 2rem 0;
+        position: sticky;
+        top: 0;
+        background-color: $white;
+
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 100%;
+        }
+    }
+
+    .middle {
+        padding: 1rem 0 4rem;
+
+        h2,
+        h4,
+        h3 {
+            color: $dark-gray;
+        }
+
+        button {
+            margin-top: 1rem;
+        }
+    }
+
+    .last {
+        h3 {
+            color: $dark-gray;
+        }
+
+        div {
+            padding: .5rem 0;
+        }
+
+        div b {
+            color: $dark-gray;
+            font-weight: 800;
+            font-size: .8rem;
+        }
+    }
+}
+
+@media (max-width:950px) {
+    .user {
+        width: 100%;
+        height: auto;
+
+        .middle{
+            .flex{
+                padding: 1rem 0;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 2rem;
+            }
+        }
+
+        .last .flex{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+    }
+}
